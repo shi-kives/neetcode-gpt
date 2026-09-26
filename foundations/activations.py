@@ -9,7 +9,7 @@ class Solution:
         # Formula: 1 / (1 + e^(-z))
         # return np.round(your_answer, 5)
 
-        output = [round(float(1/(1 + math.exp(-i))),5) for i in z]
+        output = [round(float(1/(1 + math.e ** -i)), 5) for i in z]
         return output
 
     def relu(self, z: NDArray[np.float64]) -> NDArray[np.float64]:
