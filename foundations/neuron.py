@@ -13,8 +13,7 @@ class Solution:
         # Sigmoid: σ(z) = 1 / (1 + exp(-z))
         # ReLU: max(0, z)
         # return round(your_answer, 5)
-        intm = np.matmul(x, w) + b
         if activation == 'sigmoid':
-            return np.round(1 / (1 + np.exp(-intm)), 5)
+            return np.round(1 / (1 + np.exp(-(np.matmul(x, w) + b))), 5)
         else:
-            return np.round(np.maximum(0, intm), 5)
+            return np.round(np.maximum(0, (np.matmul(x, w) + b)), 5)
