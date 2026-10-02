@@ -14,6 +14,6 @@ class Solution:
         output = x
         layers = len(weights)
         for i in range(layers - 1):
-            output = np.maximum(0, np.matmul(output, weights[i]) + biases[i])
+            output = np.maximum(0, output @ weights[i] + biases[i])
 
-        return np.round((np.matmul(output, weights[-1]) + biases[-1]), 5)
+        return np.round((output @ weights[-1] + biases[-1]), 5)
